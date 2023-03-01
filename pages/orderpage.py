@@ -37,12 +37,12 @@ class OrderPage(MainPageScooter):
 
     def set_element_by_order_for_who(self, firstname, surname, address, metro, phonenumber):
 
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 8).until(
             expected_conditions.visibility_of_element_located((self.HEADER_FOR_WHO)))
         self.driver.find_element(*self.NAME).send_keys(firstname)
         self.driver.find_element(*self.SURNAME).send_keys(surname)
         self.driver.find_element(*self.ADDRESS).send_keys(address)
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 8).until(
             expected_conditions.visibility_of_element_located((self.METRO)))
         self.driver.find_element(*self.METRO).click()
         self.driver.find_element(*self.METRO).send_keys(metro)
@@ -65,7 +65,7 @@ class OrderPage(MainPageScooter):
             expected_conditions.visibility_of_element_located((self.DATE_PICKER)))
         self.driver.find_element(*self.WHEN).send_keys(date)
         self.driver.find_element(*self.WHEN).send_keys(Keys.RETURN)
-        WebDriverWait(self.driver, 10).until(
+        WebDriverWait(self.driver, 8).until(
             expected_conditions.element_to_be_clickable((self.RENTAL_PERIOD)))
         self.driver.find_element(*self.RENTAL_PERIOD).click()
         WebDriverWait(self.driver, 3).until(
@@ -92,12 +92,16 @@ class OrderPage(MainPageScooter):
         assert self.driver.find_element(*self.ORDER_COMPLITED)
 
     def set_element_logo_scooter(self):
+        WebDriverWait(self.driver, 3).until(
+            expected_conditions.element_to_be_clickable((self.LOGO_SCOOTER)))
         self.driver.find_element(*self.LOGO_SCOOTER).click()
 
     def check_transition_to_main_page(self):
         assert self.driver.current_url == 'https://qa-scooter.praktikum-services.ru/'
 
     def set_element_yandex(self):
+        WebDriverWait(self.driver, 3).until(
+            expected_conditions.element_to_be_clickable((self.YANDEX)))
         self.driver.find_element(*self.YANDEX).click()
         self.driver.switch_to.window(self.driver.window_handles[1])
 

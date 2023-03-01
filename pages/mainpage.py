@@ -82,6 +82,7 @@ class MainPageScooter:
 
     def set_element_can_i_order_today_on_main_page(self):
         element = self.driver.find_element(*self.CAN_ORDER_TODAY_QUESTION)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
         WebDriverWait(self.driver, 3).until(
             expected_conditions.element_to_be_clickable((self.CAN_ORDER_TODAY_QUESTION)))
         element.click()
@@ -96,6 +97,7 @@ class MainPageScooter:
 
     def set_element_can_expand_return_earlier_on_main_page(self):
         element = self.driver.find_element(*self.CAN_EXPEND_RETURN_EARLIER_QUESTION)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
         WebDriverWait(self.driver, 3).until(
             expected_conditions.element_to_be_clickable((self.CAN_EXPEND_RETURN_EARLIER_QUESTION)))
         element.click()
@@ -112,6 +114,7 @@ class MainPageScooter:
 
     def set_element_charging_with_a_scooter_on_main_page(self):
         element = self.driver.find_element(*self.CHARGING_WITH_A_SCOOTER_QUESTION)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
         WebDriverWait(self.driver, 3).until(
             expected_conditions.element_to_be_clickable((self.CHARGING_WITH_A_SCOOTER_QUESTION)))
         element.click()
@@ -127,6 +130,7 @@ class MainPageScooter:
 
     def set_element_can_cancel_order_on_main_page(self):
         element = self.driver.find_element(*self.CAN_CANCEL_ORDER_QUESTION)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
         WebDriverWait(self.driver, 3).until(
             expected_conditions.element_to_be_clickable((self.CAN_CANCEL_ORDER_QUESTION)))
         element.click()
@@ -142,6 +146,7 @@ class MainPageScooter:
 
     def set_element_live_further_than_mkad_on_main_page(self):
         element = self.driver.find_element(*self.LIVE_FURTHER_THAN_MKAD_QUESTION)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
         WebDriverWait(self.driver, 3).until(
             expected_conditions.element_to_be_clickable((self.LIVE_FURTHER_THAN_MKAD_QUESTION)))
         element.click()
@@ -156,6 +161,7 @@ class MainPageScooter:
 
     def set_element_button_order_in_head_on_main_page(self):
         element = self.driver.find_element(*self.BUTTON_ORDER_IN_HEAD)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
         WebDriverWait(self.driver, 3).until(
             expected_conditions.element_to_be_clickable((self.BUTTON_ORDER_IN_HEAD)))
         element.click()
