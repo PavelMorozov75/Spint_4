@@ -23,7 +23,7 @@ class TestAccordionInMainPage:
 
     @allure.title('Как рассчитывается время аренды?')
     @allure.description('На странице ищем элемент аккордеона Как рассчитывается время аренды? и кликаем на него')
-    def test_click_on_how_calculate_rental_time(self,driver):
+    def test_click_on_how_calculate_rental_time(self, driver):
         scooter_page = MainPageScooter(driver)
         scooter_page.set_element_how_calculate_rental_time_on_main_page()
         scooter_page.check_answer_for_how_calculate_rental_time()
@@ -67,5 +67,6 @@ class TestAccordionInMainPage:
         scooter_page = MainPageScooter(driver)
         scooter_page.set_element_live_further_than_mkad_on_main_page()
         scooter_page.check_answer_for_live_further_than_mkad()
+
 
 
